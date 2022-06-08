@@ -61,10 +61,10 @@ class HomeView extends GetView<HomeController> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Box(),
-                      Box(),
-                      Box(),
-                      Box(),
+                      box(),
+                      box(),
+                      box(),
+                      box(),
                     ],
                   ),
                 ),
@@ -92,10 +92,10 @@ class HomeView extends GetView<HomeController> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Box(),
-                      Box(),
-                      Box(),
-                      Box(),
+                      box(),
+                      box(),
+                      box(),
+                      box(),
                     ],
                   ),
                 ),

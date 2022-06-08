@@ -1,7 +1,7 @@
 import 'package:antrian/app/constants/theme.dart';
 import 'package:flutter/material.dart';
 
-Widget Box() {
+Widget box() {
   return Container(
     margin: const EdgeInsets.only(right: 16),
     width: 120,

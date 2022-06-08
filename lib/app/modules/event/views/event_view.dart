@@ -1,4 +1,5 @@
 import 'package:antrian/app/constants/theme.dart';
+import 'package:antrian/app/widgets/card.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -50,16 +51,18 @@ class EventView extends GetView<EventController> {
                       }).toList(),
                     ),
                   ),
-                )
+                ),
+                const SizedBox(height: 24,),
+                card(),
+                const SizedBox(height: 12,),
+                card(),
+                const SizedBox(height: 12,),
+                card(),
               ],
+
             ),
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: colorComponentPrimary,
-        child: const Icon(Icons.qr_code_scanner),
       ),
     );
   }

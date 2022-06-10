@@ -105,6 +105,7 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        elevation: 2,
         onPressed: () {},
         backgroundColor: colorComponentPrimary,
         child: const Icon(Icons.qr_code_scanner),

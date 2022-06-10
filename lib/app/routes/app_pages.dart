@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/event/bindings/event_binding.dart';
 import '../modules/event/views/event_view.dart';
+import '../modules/event_add/bindings/event_add_binding.dart';
+import '../modules/event_add/views/event_add_view.dart';
 import '../modules/event_detail/bindings/event_detail_binding.dart';
 import '../modules/event_detail/views/event_detail_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.EVENT_DETAIL,
       page: () => EventDetailView(),
       binding: EventDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.EVENT_ADD,
+      page: () => EventAddView(),
+      binding: EventAddBinding(),
     ),
   ];
 }

@@ -72,6 +72,12 @@ class EventView extends GetView<EventController> {
           ),
         ),
       ),
+    floatingActionButton: FloatingActionButton(
+      elevation: 2,
+        onPressed: () {},
+        backgroundColor: colorComponentPrimary,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

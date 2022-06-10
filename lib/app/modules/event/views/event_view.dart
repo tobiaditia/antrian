@@ -1,4 +1,5 @@
 import 'package:antrian/app/constants/theme.dart';
+import 'package:antrian/app/routes/app_pages.dart';
 import 'package:antrian/app/widgets/card.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,7 @@ class EventView extends GetView<EventController> {
                                 controller.jenisAcara.indexOf(e),
                             onSelected: (bool selected) {
                               if (selected) {
-                                controller.selectedChoiceChip.value ==
+                                controller.selectedChoiceChip.value =
                                     controller.jenisAcara.indexOf(e);
                               }
                             },
@@ -52,14 +53,21 @@ class EventView extends GetView<EventController> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 24,),
+                const SizedBox(
+                  height: 24,
+                ),
+                GestureDetector(
+                    onTap: () => Get.toNamed(Routes.EVENT_DETAIL),
+                    child: card()),
+                const SizedBox(
+                  height: 12,
+                ),
                 card(),
-                const SizedBox(height: 12,),
-                card(),
-                const SizedBox(height: 12,),
+                const SizedBox(
+                  height: 12,
+                ),
                 card(),
               ],
-
             ),
           ),
         ),

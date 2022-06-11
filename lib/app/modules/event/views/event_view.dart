@@ -72,9 +72,10 @@ class EventView extends GetView<EventController> {
           ),
         ),
       ),
-    floatingActionButton: FloatingActionButton(
-      elevation: 2,
-        onPressed: () {},
+      floatingActionButton: FloatingActionButton(
+        heroTag: null,
+        elevation: 2,
+        onPressed: () => Get.toNamed(Routes.EVENT_ADD),
         backgroundColor: colorComponentPrimary,
         child: const Icon(Icons.add),
       ),

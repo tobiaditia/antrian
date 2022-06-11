@@ -105,6 +105,7 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: null,
         elevation: 2,
         onPressed: () {},
         backgroundColor: colorComponentPrimary,

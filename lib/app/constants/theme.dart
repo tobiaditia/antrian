@@ -10,6 +10,7 @@ Color colorComponentGray = const Color(0xFFF2F4F5);
 Color colorComponentGray2 = const Color(0xFF979C9E);
 Color colorComponentRed = const Color(0xFFD85751);
 Color colorComponentGreen = const Color(0xFF4CCB68);
+Color colorComponentBorder = const Color(0xFFE3E5E5);
 
 Color colorTextBlack = const Color(0xFF090A0A);
 Color colorTextWhite = const Color(0xFFFFFFFF);

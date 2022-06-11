@@ -62,7 +62,8 @@ class EventView extends GetView<EventController> {
                 const SizedBox(
                   height: 12,
                 ),
-                card(),
+                GestureDetector(
+                    onTap: () => Get.toNamed(Routes.EVENT_EDIT), child: card()),
                 const SizedBox(
                   height: 12,
                 ),

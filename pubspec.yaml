@@ -22,5 +22,6 @@ flutter:
     - assets/
     - assets/images/
     - assets/images/events/
+    - assets/images/app/
   uses-material-design: true
 

@@ -8,6 +8,7 @@ Color colorComponentSecondary = const Color(0xFFE7E7FF);
 Color colorComponentBlue = const Color(0xFF1DA1F2);
 Color colorComponentGray = const Color(0xFFF2F4F5);
 Color colorComponentGray2 = const Color(0xFF979C9E);
+Color colorComponentGray3 = const Color(0xFFAFBCCB);
 Color colorComponentRed = const Color(0xFFD85751);
 Color colorComponentGreen = const Color(0xFF4CCB68);
 Color colorComponentBorder = const Color(0xFFE3E5E5);
@@ -39,5 +40,7 @@ TextStyle gFontInterBlueMedium =
     GoogleFonts.inter(fontWeight: FontWeight.w500, color: colorTextBlue);
 TextStyle gFontInterPrimaryRegular = GoogleFonts.inter(
     fontWeight: FontWeight.w400, color: colorComponentPrimary);
+TextStyle gFontInterGraySplashBold = GoogleFonts.inter(
+    fontWeight: FontWeight.w700, color: const Color(0xFFAFBCCB));
 
 double margin = 24;

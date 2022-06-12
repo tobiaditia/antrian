@@ -22,46 +22,46 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.SPLASH;
+  static const initial = Routes.splash;
 
   static final routes = [
     GetPage(
-      name: _Paths.HOME,
+      name: _Paths.home,
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.INDEX,
+      name: _Paths.index,
       page: () => const IndexView(),
       binding: IndexBinding(),
     ),
     GetPage(
-      name: _Paths.EVENT,
+      name: _Paths.event,
       page: () => const EventView(),
       binding: EventBinding(),
     ),
     GetPage(
-      name: _Paths.PROFIL,
-      page: () => const ProfilView(),
+      name: _Paths.profil,
+      page: () => ProfilView(),
       binding: ProfilBinding(),
     ),
     GetPage(
-      name: _Paths.EVENT_DETAIL,
+      name: _Paths.eventDetail,
       page: () => EventDetailView(),
       binding: EventDetailBinding(),
     ),
     GetPage(
-      name: _Paths.EVENT_ADD,
+      name: _Paths.eventAdd,
       page: () => const EventAddView(),
       binding: EventAddBinding(),
     ),
     GetPage(
-      name: _Paths.EVENT_EDIT,
+      name: _Paths.eventEdit,
       page: () => const EventEditView(),
       binding: EventEditBinding(),
     ),
     GetPage(
-      name: _Paths.SPLASH,
+      name: _Paths.splash,
       page: () => SplashView(),
       binding: SplashBinding(),
     ),

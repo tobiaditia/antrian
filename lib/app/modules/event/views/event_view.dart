@@ -59,13 +59,13 @@ class EventView extends GetView<EventController> {
                   height: 24,
                 ),
                 GestureDetector(
-                    onTap: () => Get.toNamed(Routes.EVENT_DETAIL),
+                    onTap: () => Get.toNamed(Routes.eventDetail),
                     child: card()),
                 const SizedBox(
                   height: 12,
                 ),
                 GestureDetector(
-                    onTap: () => Get.toNamed(Routes.EVENT_EDIT), child: card()),
+                    onTap: () => Get.toNamed(Routes.eventEdit), child: card()),
                 const SizedBox(
                   height: 12,
                 ),
@@ -78,7 +78,7 @@ class EventView extends GetView<EventController> {
       floatingActionButton: FloatingActionButton(
         heroTag: null,
         elevation: 2,
-        onPressed: () => Get.toNamed(Routes.EVENT_ADD),
+        onPressed: () => Get.toNamed(Routes.eventAdd),
         backgroundColor: colorComponentPrimary,
         child: const Icon(Icons.add),
       ),

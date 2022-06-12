@@ -1,11 +1,10 @@
+import 'package:antrian/app/routes/app_pages.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthControllerController extends GetxController {
-  var isAuth = false.obs;
-  var isLoading = false.obs;
-
+  RxBool isAuth = false.obs;
   // final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   GoogleSignInAccount? user;
@@ -13,22 +12,18 @@ class AuthControllerController extends GetxController {
 
   Future<void> autoLogin() async {
     try {
-      isLoading.value = true;
       final isSignin = await _googleSignIn.isSignedIn();
       if (isSignin) {
         await _googleSignIn.signIn().then((value) => user = value);
         isAuth.value = true;
       }
-      isLoading.value = false;
     } catch (err) {
-      isLoading.value = false;
+      print(err);
     }
-    update();
   }
 
-  Future<void> login() async {
+  Future<GoogleSignInAccount?> login() async {
     try {
-      isLoading.value = true;
       await _googleSignIn.signIn().then((value) => user = value);
       final isSignIn = await _googleSignIn.isSignedIn();
 
@@ -42,24 +37,21 @@ class AuthControllerController extends GetxController {
         await FirebaseAuth.instance
             .signInWithCredential(credential)
             .then((value) => userCredential = value);
-
         isAuth.value = true;
+      } else {
+        return null;
       }
-
-      isLoading.value = false;
     } catch (error) {
-      isLoading.value = false;
+      return null;
     }
-    update();
+    return null;
   }
 
   Future<void> logout() async {
-    isLoading.value = true;
     await _googleSignIn.disconnect();
     await _googleSignIn.signOut();
     isAuth.value = false;
-    isLoading.value = false;
-    update();
+    Get.offAllNamed(Routes.splash);
   }
 
   @override

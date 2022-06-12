@@ -3,26 +3,24 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const HOME = _Paths.HOME;
-  static const INDEX = _Paths.INDEX;
-  static const EVENT = _Paths.EVENT;
-  static const PROFIL = _Paths.PROFIL;
-  static const EVENT_DETAIL = _Paths.EVENT_DETAIL;
-  static const EVENT_ADD = _Paths.EVENT_ADD;
-  static const EVENT_EDIT = _Paths.EVENT_EDIT;
-  static const SPLASH = _Paths.SPLASH;
-  static const TES = _Paths.TES;
+  static const home = _Paths.home;
+  static const index = _Paths.index;
+  static const event = _Paths.event;
+  static const profil = _Paths.profil;
+  static const eventDetail = _Paths.eventDetail;
+  static const eventAdd = _Paths.eventAdd;
+  static const eventEdit = _Paths.eventEdit;
+  static const splash = _Paths.splash;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const HOME = '/home';
-  static const INDEX = '/index';
-  static const EVENT = '/event';
-  static const PROFIL = '/profil';
-  static const EVENT_DETAIL = '/event-detail';
-  static const EVENT_ADD = '/event-add';
-  static const EVENT_EDIT = '/event-edit';
-  static const SPLASH = '/splash';
-  static const TES = '/tes';
+  static const home = '/home';
+  static const index = '/index';
+  static const event = '/event';
+  static const profil = '/profil';
+  static const eventDetail = '/event-detail';
+  static const eventAdd = '/event-add';
+  static const eventEdit = '/event-edit';
+  static const splash = '/splash';
 }

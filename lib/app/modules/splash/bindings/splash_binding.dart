@@ -9,6 +9,7 @@ class SplashBinding extends Bindings {
     Get.lazyPut<SplashController>(
       () => SplashController(),
     );
+    
     Get.put(AuthControllerController(), permanent: true);
   }
 }

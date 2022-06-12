@@ -7,10 +7,9 @@ import 'package:get/get.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
-
-  const SplashView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    int i = controller.count.value;
     return Scaffold(
       backgroundColor: const Color(0xFFDAE2EB),
       body: SafeArea(
@@ -51,9 +50,11 @@ class SplashView extends GetView<SplashController> {
               const SizedBox(
                 height: 24,
               ),
-              GestureDetector(
-                  onTap: () => controller.login(),
-                  child: buttonBottom(colorComponentPrimary, "Log in"))
+              Obx(
+                () => GestureDetector(
+                    onTap: () => controller.login(),
+                    child: buttonBottom(colorComponentPrimary, "Log in")),
+              )
             ],
           )),
         ),

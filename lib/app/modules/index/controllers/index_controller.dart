@@ -9,5 +9,12 @@ class IndexController extends GetxController {
   }
 
   @override
+  void onInit() async {
+    super.onInit();
+    print('lo');
+    Future.delayed(const Duration(seconds: 1), () => {});
+  }
+
+  @override
   void onClose() {}
 }

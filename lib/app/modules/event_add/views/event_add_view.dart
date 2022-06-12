@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import '../controllers/event_add_controller.dart';
 
 class EventAddView extends GetView<EventAddController> {
+  const EventAddView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

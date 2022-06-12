@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "568251954728",
+    "project_id": "antrian-317fe",
+    "storage_bucket": "antrian-317fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568251954728:android:c85a47724cdd90ed26a71d",
+        "android_client_info": {
+          "package_name": "com.example.antrian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568251954728-p99apug3rfvpu08hphqqh24mnv2fao1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.antrian",
+            "certificate_hash": "3c4d0f3649dbccf1f94a918a635b43f4d89a9209"
+          }
+        },
+        {
+          "client_id": "568251954728-urli1egtoi4ckh0010c36e2gtdbcarm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqHn8mt1ULyZvKV_y1CMiNcG3-3RK41CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568251954728-urli1egtoi4ckh0010c36e2gtdbcarm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,6 +8,8 @@ import '../controllers/event_detail_controller.dart';
 
 class EventDetailView extends GetView<EventDetailController> {
   bool isMine = false;
+
+  EventDetailView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

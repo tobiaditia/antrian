@@ -8,13 +8,15 @@ import 'package:get/get.dart';
 import '../controllers/index_controller.dart';
 
 class IndexView extends GetView<IndexController> {
+  const IndexView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<IndexController>(builder: (controller) {
       return Scaffold(
         body: IndexedStack(
           index: controller.tabIndex,
-          children: [HomeView(), EventView(), ProfilView()],
+          children: const [HomeView(), EventView(), ProfilView()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [

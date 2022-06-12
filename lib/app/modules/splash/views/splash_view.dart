@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
+
+  const SplashView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +18,8 @@ class SplashView extends GetView<SplashController> {
           margin: const EdgeInsets.all(24),
           child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 36,
@@ -43,12 +45,15 @@ class SplashView extends GetView<SplashController> {
                   child: Image.asset(
                     'assets/images/app/splash.png',
                     width: double.infinity,
-                    
                   ),
                 ),
               ),
-              const SizedBox(height: 24,),
-              buttonBottom(colorComponentPrimary, "Log in")
+              const SizedBox(
+                height: 24,
+              ),
+              GestureDetector(
+                  onTap: () => controller.login(),
+                  child: buttonBottom(colorComponentPrimary, "Log in"))
             ],
           )),
         ),

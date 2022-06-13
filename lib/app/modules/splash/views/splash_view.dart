@@ -50,11 +50,14 @@ class SplashView extends GetView<SplashController> {
               const SizedBox(
                 height: 24,
               ),
-              Obx(
-                () => GestureDetector(
-                    onTap: () => controller.login(),
-                    child: buttonBottom(colorComponentPrimary, "Log in")),
-              )
+              Obx(() {
+                return controller.isLoading.isTrue
+                    ? buttonBottom(colorComponentGray2, "Mohon tunggu ...")
+                    : GestureDetector(
+                        onTap: () => controller.login(),
+                        child: buttonBottom(colorComponentPrimary, "Log in"),
+                      );
+              })
             ],
           )),
         ),

@@ -1,6 +1,5 @@
 import 'package:antrian/app/constants/theme.dart';
 import 'package:antrian/app/controllers/auth_controller_controller.dart';
-import 'package:antrian/app/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -21,76 +20,136 @@ class ProfilView extends GetView<ProfilController> {
             child: Column(
               children: [
                 const SizedBox(
+                  height: 12,
+                ),
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage:
+                        NetworkImage(authController.user!.photoUrl.toString()),
+                    radius: 40,
+                    backgroundColor: colorComponentPrimary,
+                  ),
+                ),
+                const SizedBox(
                   height: 24,
                 ),
-                Row(
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      backgroundImage:
-                          const AssetImage('assets/images/events/event1.jpg'),
-                      radius: 30,
-                      backgroundColor: colorComponentPrimary,
+                    Text(
+                      '${authController.user!.displayName}',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: gFontInterBlackBold.copyWith(fontSize: 18),
                     ),
                     const SizedBox(
-                      width: 16,
+                      height: 8,
                     ),
-                    Expanded(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'William',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: gFontInterBlackBold,
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'william@gmail.com',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: gFontInterBlackRegular,
-                        ),
-                      ],
-                    ))
+                    Text(
+                      authController.user!.email,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: gFontInterBlackRegular,
+                    ),
                   ],
                 ),
                 const SizedBox(
-                  height: 24,
+                  height: 12,
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: colorComponentSecondary,
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0xFF979C9E),
-                        offset: Offset(
-                          0.5,
-                          0.5,
+                const Divider(
+                  thickness: 1,
+                ),
+                Column(
+                  children: [
+                    GestureDetector(
+                      onTap: null,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.place_outlined,
+                              size: 24,
+                            ),
+                            const SizedBox(width: 16),
+                            Text(
+                              'Alamat',
+                              style:
+                                  gFontInterBlackRegular.copyWith(fontSize: 14),
+                            ),
+                          ],
                         ),
-                        blurRadius: 0,
-                        spreadRadius: 0,
                       ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Ubah Profil',
-                      style: gFontInterPrimaryRegular.copyWith(fontSize: 14),
                     ),
-                  ),
+                    GestureDetector(
+                      onTap: null,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.help_outline_rounded,
+                              size: 24,
+                            ),
+                            const SizedBox(width: 16),
+                            Text(
+                              'Bantuan',
+                              style:
+                                  gFontInterBlackRegular.copyWith(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: null,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.g_translate_rounded,
+                              size: 24,
+                            ),
+                            const SizedBox(width: 16),
+                            Text(
+                              'Bahasa',
+                              style:
+                                  gFontInterBlackRegular.copyWith(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Divider(
+                      thickness: 1,
+                    ),
+                    GestureDetector(
+                      onTap: () => authController.logout(),
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.logout_outlined,
+                              size: 24,
+                              color: colorComponentRed,
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Text(
+                                'Logout',
+                                style:
+                                    gFontInterRedRegular.copyWith(fontSize: 14),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
-                GestureDetector(
-                    onTap: () => authController.logout(),
-                    child: buttonBottom(colorComponentRed, 'Log out'))
               ],
             ),
           ),

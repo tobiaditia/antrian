@@ -16,7 +16,7 @@ class IndexView extends GetView<IndexController> {
       return Scaffold(
         body: IndexedStack(
           index: controller.tabIndex,
-          children:  [const HomeView(), const EventView(), ProfilView()],
+          children:  [HomeView(), const EventView(), ProfilView()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [

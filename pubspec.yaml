@@ -12,6 +12,9 @@ dependencies:
   google_sign_in: 5.3.3
   firebase_core: ^1.17.1
   firebase_auth: 3.3.19
+  flutter_dotenv: 5.0.2
+  http: 0.13.4
+  shimmer: 2.0.0
   flutter: 
     sdk: flutter
 
@@ -27,5 +30,6 @@ flutter:
     - assets/images/events/
     - assets/images/app/
     - assets/images/app/weathers/
+    - .env
   uses-material-design: true
 

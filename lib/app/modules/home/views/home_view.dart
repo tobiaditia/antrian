@@ -1,5 +1,6 @@
 import 'package:antrian/app/constants/theme.dart';
 import 'package:antrian/app/widgets/box.dart';
+import 'package:antrian/app/widgets/shimmer.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -7,10 +8,11 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut<HomeController>(
+      () => HomeController(),
+    );
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -33,12 +35,13 @@ class HomeView extends GetView<HomeController> {
                           height: 12,
                         ),
                         Text(
-                          "Monday, January 25, 2021",
+                          controller.date,
                           style: gFontInterBlackRegular.copyWith(fontSize: 14),
                         )
                       ],
                     ),
                     Container(
+                      width: 100,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 6),
                         decoration: const BoxDecoration(
@@ -48,20 +51,34 @@ class HomeView extends GetView<HomeController> {
                                 bottomRight: Radius.circular(14),
                                 topRight: Radius.circular(6),
                                 bottomLeft: Radius.circular(6))),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              'assets/images/app/weathers/13d.png',
-                              width: 50,
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            Text('24.7° C',
-                                style: gFontInterBlackMedium.copyWith(
-                                    fontSize: 12)),
-                          ],
-                        )),
+                        child: GetBuilder<HomeController>(
+                            builder: (homeController) {
+                          return homeController.weather == null
+                              ? Column(
+                                  children: [
+                                    builderShimmer(10),
+                                    const SizedBox(
+                                      height: 2,
+                                    ),
+                                    builderShimmer(10),
+                                  ],
+                                )
+                              : Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/app/weathers/${homeController.weather!.weather[0].icon}.png',
+                                      width: 50,
+                                    ),
+                                    const SizedBox(
+                                      height: 2,
+                                    ),
+                                    Text(
+                                        '${homeController.weather!.main.temp}° C',
+                                        style: gFontInterBlackMedium.copyWith(
+                                            fontSize: 12)),
+                                  ],
+                                );
+                        })),
                   ],
                 ),
                 const SizedBox(

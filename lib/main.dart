@@ -5,12 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   final authController = Get.put(AuthControllerController(), permanent: true);
   await authController.autoLogin();
+  await dotenv.load(fileName: ".env");
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,

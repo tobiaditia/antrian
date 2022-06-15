@@ -20,6 +20,7 @@ class HomeView extends GetView<HomeController> {
               children: [
                 const SizedBox(height: 24),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +37,31 @@ class HomeView extends GetView<HomeController> {
                           style: gFontInterBlackRegular.copyWith(fontSize: 14),
                         )
                       ],
-                    )
+                    ),
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 6),
+                        decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 169, 172, 173),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(14),
+                                bottomRight: Radius.circular(14),
+                                topRight: Radius.circular(6),
+                                bottomLeft: Radius.circular(6))),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/app/weathers/13d.png',
+                              width: 50,
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            Text('24.7° C',
+                                style: gFontInterBlackMedium.copyWith(
+                                    fontSize: 12)),
+                          ],
+                        )),
                   ],
                 ),
                 const SizedBox(
@@ -109,7 +134,73 @@ class HomeView extends GetView<HomeController> {
       floatingActionButton: FloatingActionButton(
         heroTag: null,
         elevation: 2,
-        onPressed: () {},
+        onPressed: () {
+          Get.bottomSheet(
+              Container(
+                height: 180,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                decoration: BoxDecoration(
+                  color: colorComponentWhite,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 6,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: const Color(0xFFCDCFD0),
+                          borderRadius: BorderRadius.circular(100)),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: colorComponentPrimary,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Scan QR Code',
+                          style: gFontInterBlackMedium.copyWith(fontSize: 14),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 8,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: colorComponentPrimary,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Kode Acara',
+                          style: gFontInterBlackMedium.copyWith(fontSize: 14),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              elevation: 12);
+        },
         backgroundColor: colorComponentPrimary,
         child: const Icon(Icons.qr_code_scanner),
       ),

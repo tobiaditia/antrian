@@ -44,5 +44,7 @@ TextStyle gFontInterGraySplashBold = GoogleFonts.inter(
     fontWeight: FontWeight.w700, color: const Color(0xFFAFBCCB));
 TextStyle gFontInterRedRegular =
     GoogleFonts.inter(fontWeight: FontWeight.w400, color: colorComponentRed);
+TextStyle gFontInterGreenRegular =
+    GoogleFonts.inter(fontWeight: FontWeight.w400, color: colorComponentGreen);
 
 double margin = 24;

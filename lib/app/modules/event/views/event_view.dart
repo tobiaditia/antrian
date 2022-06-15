@@ -21,6 +21,23 @@ class EventView extends GetView<EventController> {
             child: Column(
               children: [
                 const SizedBox(height: 24),
+                TextField(
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
+                    filled: true,
+                    fillColor: const Color(0xFFF2F4F5),
+                    prefixIcon:  Icon(Icons.search,color: colorComponentBlack,),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                        borderSide: BorderSide(color: colorComponentPrimary)),
+                    labelText: 'Cari acara',
+                    labelStyle: gFontInterBlackRegular.copyWith(fontSize: 14),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                        borderSide: const BorderSide(color: Colors.transparent)),
+                  ),
+                ),
+                const SizedBox(height: 24),
                 SizedBox(
                   height: 40,
                   child: Obx(
